@@ -1,0 +1,193 @@
+{
+	"mappings": {
+		"@docName@": {
+			"dynamic": "strict",
+			"properties": {
+				"bc_trans_hash": {
+					"type": "keyword",
+					"fields": {
+						"normalize": {
+			              	"type": "keyword",
+			              	"normalizer": "useLowercase"
+			            }
+					}
+				},
+				"bc_trans_id": {
+					"type": "keyword",
+					"fields": {
+						"normalize": {
+			              	"type": "keyword",
+			              	"normalizer": "useLowercase"
+				         }
+					}
+				},
+				"create_ts": {
+					"type": "date",
+					"fields": {
+						"keyword": {
+							"type": "date"
+						}
+					}
+				},
+				"entry_id": {
+					"type": "keyword",
+					"fields": {
+						"normalize": {
+			              	"type": "keyword",
+			              	"normalizer": "useLowercase"
+			            }
+					}
+				},
+				"extra_props" : {
+					"type": "nested",
+					"dynamic": true,
+					"include_in_parent": true,
+					"properties" : {
+						"prop_name" : {
+							"type" : "keyword",
+							"fields": {
+								"normalize": {
+									"type": "keyword",
+									"normalizer": "useLowercase"
+								}
+							}
+						},
+						"prop_value" : {
+							"type" : "keyword",
+							"fields": {
+								"normalize": {
+									"type": "keyword",
+									"normalizer": "useLowercase"
+								}
+							}
+						}
+					}
+				},
+				"parent_id": {
+					"type": "keyword",
+					"fields": {
+						"normalize": {
+			              	"type": "keyword",
+			              	"normalizer": "useLowercase"
+			            }
+					}
+				},
+				"service_name": {
+					"type": "keyword",
+					"fields": {
+						"normalize": {
+			              	"type": "keyword",
+			              	"normalizer": "useLowercase"
+			            }
+					}
+				},
+				"trans_desp": {
+					"type": "keyword",
+					"fields": {
+						"normalize": {
+			              	"type": "keyword",
+			              	"normalizer": "useLowercase"
+			            }
+					}
+				},
+				"trans_destination": {
+					"type": "keyword",
+					"fields": {
+						"normalize": {
+			              	"type": "keyword",
+			              	"normalizer": "useLowercase"
+			            }
+					}
+				},
+				"trans_id": {
+					"type": "keyword",
+					"fields": {
+						"normalize": {
+			              	"type": "keyword",
+			              	"normalizer": "useLowercase"
+			            }
+					}
+				},
+				"trans_source": {
+					"type": "keyword",
+					"fields": {
+						"normalize": {
+			              	"type": "keyword",
+			              	"normalizer": "useLowercase"
+			            }
+					}
+				},
+				"trans_state": {
+					"type": "keyword",
+					"fields": {
+						"normalize": {
+			              	"type": "keyword",
+			              	"normalizer": "useLowercase"
+			            }
+					}
+				},
+				"trans_status": {
+					"type": "keyword",
+					"fields": {
+						"normalize": {
+			              	"type": "keyword",
+			              	"normalizer": "useLowercase"
+			            }
+					}
+				},
+				"trans_ts": {
+					"type": "date",
+					"fields": {
+						"keyword": {
+							"type": "date"
+						}
+					}
+				},
+				"tsc_sub_id": {
+					"type": "keyword",
+					"fields": {
+						"normalize": {
+			              	"type": "keyword",
+			              	"normalizer": "useLowercase"
+			            }
+					}
+				},
+				"user_id": {
+					"type": "keyword",
+					"fields": {
+						"normalize": {
+			              	"type": "keyword",
+			              	"normalizer": "useLowercase"
+			            }
+					}
+				},
+				"user_trans_id": {
+					"type": "keyword",
+					"fields": {
+						"normalize": {
+			              	"type": "keyword",
+			              	"normalizer": "useLowercase"
+			            }
+					}
+				},
+				"payload": {
+					"type": "text"
+				}
+			}
+		}
+	},
+	"settings": {
+		"index": {
+			"number_of_shards": "5",
+			"number_of_replicas": "1"
+		},
+		"analysis": {
+			"normalizer": {
+				"useLowercase": {
+					"type": "custom",
+          			"filter": ["lowercase"]
+				}
+			}
+		}
+	}
+}
